@@ -21,10 +21,15 @@ class Sphinx {
         correctAttempt = idx;
       }
     }
-    if (correctAttempt !== undefined) {
+    if (this.riddles.length === 1 && correctAttempt !== undefined) {
+      this.riddles.splice(correctAttempt, 1);
+      return `PSSSSSSS THIS HAS NEVER HAPPENED, HOW DID YOU KNOW THE ANSWER WAS "${attempt}"???`
+    } else if (correctAttempt !== undefined) {
       this.riddles.splice(correctAttempt, 1);
       return 'That wasn\'t that hard, I bet you don\'t get the next one'
-    } else { this.heroesEaten += 1 };
+    }
+    
+    this.heroesEaten += 1;
   }
 }
 
