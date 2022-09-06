@@ -99,16 +99,16 @@ describe('Fairy', () => {
     assert.deepEqual(secondInfant, { name: 'Henry', eyes: 'Brown', disposition: 'Malicious'});
   });
 
-  it.skip('should only steal infants when feeling vengeful', () => {
+  it('should only steal infants when feeling vengeful', () => {
     const fairy = new Fairy('Marceline');
     const firstInfant = { name: 'Josiah', eyes: 'Green', disposition: 'Calm' };
-
+   
     const newFirstInfant = fairy.replaceInfant(firstInfant);
-
+    
     assert.equal(firstInfant, newFirstInfant);
   });
 
-  it.skip('should raise stolen infants as its own', () => {
+  it('should raise stolen infants as its own', () => {
     const fairy = new Fairy('Winnie');
     const firstInfant = { name: 'Mary', eyes: 'Green', disposition: 'Calm' };
     const secondInfant = { name: 'Clarke', eyes: 'Brown', disposition: 'Gentle'};
@@ -122,7 +122,7 @@ describe('Fairy', () => {
     assert.deepEqual(fairy.humanWards, [ firstInfant, secondInfant ]);
   });
 
-  it.skip('should calm down after stealing three infants', () => {
+  it('should calm down after stealing three infants', () => {
     const fairy = new Fairy('Basil');
     const firstInfant = { name: 'Josiah', eyes: 'Green', disposition: 'Calm' };
     const secondInfant = { name: 'Clarence', eyes: 'Brown', disposition: 'Delightful' };

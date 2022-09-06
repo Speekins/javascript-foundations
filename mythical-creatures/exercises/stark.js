@@ -17,10 +17,12 @@ sayHouseWords() {
   return "Winter is Coming"
 }
 
-callDirewolf(direwolf) {
+callDirewolf(name, location) {
+  let newDirewolf = new Direwolf(name, location);
   this.safe = true;
-  direwolf.starksToProtect.push(this);
-  direwolf.home = this.location;
+  newDirewolf.home = this.location;
+  newDirewolf.protect(this);
+  return newDirewolf;
 }
 }
 
