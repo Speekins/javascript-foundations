@@ -9,12 +9,20 @@ class Ogre {
 
   encounter(human) {
     human.encounterCounter += 1;
+    if (human.noticesOgre()){
+      this.swingAt();
+    }
+    if (this.swings % 2 === 0) {
+      human.knockedOut = true;
+    }
   }
 
-  swingAt(human) {
-    if (human.encounterCounter >= 3 && human.encounterCounter % 3 === 0) {
+  swingAt() {
       this.swings += 1;
-    }
+  }
+
+  apologize(human) {
+    human.knockedOut = false;
   }
 }
 
